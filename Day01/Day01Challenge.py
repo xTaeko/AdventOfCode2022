@@ -4,8 +4,8 @@ import Commons
 # Find the Elf carrying the most Calories. How many total Calories is that Elf carrying?
 def part_one():
     testinput = Commons.readInputAsStringList()
-    divided_by_elves = [[0], [0]]
-    elve_index = 1
+    divided_by_elves = [[0]]
+    elve_index = 0
 
     for food in testinput:
         if food == '':
@@ -23,8 +23,8 @@ def part_one():
 # Find the top three Elves carrying the most Calories. How many Calories are those Elves carrying in total?
 def part_two():
     testinput = Commons.readInputAsStringList()
-    divided_by_elves = [[0], [0]]
-    elve_index = 1
+    divided_by_elves = [[0]]
+    elve_index = 0
 
     for food in testinput:
         if food == '':
