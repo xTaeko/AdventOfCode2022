@@ -1,5 +1,4 @@
 import Commons
-from itertools import cycle
 # https://adventofcode.com/2022/day/2
 
 # Rock      = A    X
@@ -61,7 +60,6 @@ def part_two():
     testinput = Commons.readInputAsStringList()
     testinput = [line.split(" ") for line in testinput]
 
-
     ## The point for the shapes are the index + 1
     shapes = ['A', 'B', 'C']
     # index    0    1    2
@@ -78,13 +76,6 @@ def part_two():
         elif game[1] == 'Z': # win
             points = points + 6
             points = points + ((shapes.index(game[0]) + 1) % 3) + 1
-
-    ## Explaination
-    # To win you need the shape one index further of the shape of your opponent (index + 1): If they have A, you need B. If they have C, you need A -- Cycle through the list
-    # To lose you need the shape one index before the shape of your opponent (index - 1): If they have A, you need C. If they have C, you need B -- Cycle through the list
-    # In case of draw, you just need the same shape so the index stays the same  (index)
-    # Since you cycle through the list the index you need may be higher then your list is. So you need to calculate modolo len(list) in our case 3
-    # For the points just add one. Since points for shapes are the index of your shape +1
 
     print(points)
     return points
